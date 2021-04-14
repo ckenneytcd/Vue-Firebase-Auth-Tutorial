@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import Register from '../views/Register.vue';
+import Login from '../views/Login.vue';
 import firebase from 'firebase';
 
 Vue.use(VueRouter);
@@ -14,19 +16,12 @@ const routes = [
     {
         path: '/register',
         name: 'Register',
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../views/About.vue'),
+        component: Register,
     },
     {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: () =>
-            import(
-                /* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'
-            ),
-        meta: {
-            authRequired: true,
-        },
+        path: '/login',
+        name: 'Login',
+        component: Login,
     },
 ];
 
